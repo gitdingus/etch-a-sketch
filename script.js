@@ -22,7 +22,6 @@ for (let i = 0; i < SQUARE; i++){
 function clearPanel(){
     const pixels = document.querySelectorAll(".column");
 
-    console.log('Clear button clicked');
     for (let pixel of pixels){
         pixel.style.backgroundColor = "white";
     }
