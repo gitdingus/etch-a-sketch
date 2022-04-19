@@ -2,7 +2,14 @@ const clearButton = document.querySelector("#clear-button");
 const gridButton = document.querySelector("#grid-button");
 const gridInput = document.querySelector("#grid-input");
 const sketchContainer = document.querySelector("#sketch-container");
+let draw = false;
 
+sketchContainer.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    changeBg(e);
+    draw = true;
+});
+window.addEventListener('mouseup', () => draw = false);
 clearButton.addEventListener('click', clearPanel);
 
 gridButton.addEventListener('click', () => {
@@ -36,7 +43,11 @@ function drawGrid(size){
             
             innerDiv.classList.add("column");
     
-            innerDiv.addEventListener('mouseover', (e) => changeBg(e));
+            innerDiv.addEventListener('mouseover', (e) => {
+                if (draw){
+                    changeBg(e);
+                }
+            });
             outerDiv.appendChild(innerDiv);
         }
     
