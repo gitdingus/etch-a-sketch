@@ -1,0 +1,16 @@
+#sketch-container{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.row{
+    display:flex;
+    flex: 1;
+}
+
+div.column {
+    flex: 1;
+    border: 1px solid rgb(204, 200, 200);
+}
